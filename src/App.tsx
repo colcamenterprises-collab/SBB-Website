@@ -13,9 +13,9 @@ export default function App() {
       <TopHero />
       <FoodCards />
       <FlavorCircle />
-      <OrderCallout />
       <AdventureSection />
       <Testimonials />
+      <OrderCallout />
       <FoodTicker />
       <Footer />
     </main>
