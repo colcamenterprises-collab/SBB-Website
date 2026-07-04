@@ -12,7 +12,7 @@ export const foodCards = [
   { type: 'image', image: images.burger, label: 'DOUBLE SMASH' },
   { type: 'text', tone: 'black', label: 'SBB HEAT' },
   { type: 'image', image: images.fries, label: 'LOADED FRIES' },
-  { type: 'text', tone: 'red', label: 'RAWAI READY' },
+  { type: 'text', tone: 'yellow', label: 'RAWAI READY' },
   { type: 'image', image: images.friedChicken, label: 'CRISPY CHICKEN' },
 ] as const;
 

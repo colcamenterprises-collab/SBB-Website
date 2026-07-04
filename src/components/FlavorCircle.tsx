@@ -52,7 +52,7 @@ export default function FlavorCircle() {
 
         <span className="circle-sticker sticker-one">SAUCE</span>
         <span className="circle-sticker sticker-two">BURGERS</span>
-        <span className="circle-sticker sticker-three">CHEEZY</span>
+        <span className="circle-sticker sticker-three">FRIES</span>
       </div>
     </section>
   );
