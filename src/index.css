@@ -334,77 +334,80 @@ a {
 
 .flavor-circle-section {
   position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
   background: var(--sbb-cream);
-  padding: 50px 20px 110px;
+  padding: 90px 20px 72px;
 }
 
 .flavor-circle {
   position: relative;
-  width: min(360px, 92vw);
-  height: min(360px, 92vw);
+  width: 430px;
+  height: 430px;
   margin: 0 auto;
-  border-radius: 50%;
+  transform: rotate(-4deg);
 }
 
-.circle-row {
+.typography-whirlpool {
   position: absolute;
-  left: 50%;
-  width: 440px;
-  color: var(--sbb-black);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.circle-type-ring {
+  fill: var(--sbb-black);
   font-family: 'Bowlby One SC', cursive;
-  font-size: 20px;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
 }
 
 .chef-doodle {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 176px;
-  height: 176px;
-  transform: translate(-50%, -50%);
+  width: 96px;
+  height: 96px;
+  transform: translate(-50%, -50%) rotate(4deg);
   fill: none;
   stroke: var(--sbb-black);
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 6;
-}
-
-.chef-doodle circle {
-  fill: var(--sbb-black);
+  stroke-width: 2.5;
 }
 
 .circle-sticker {
   position: absolute;
-  border: 3px solid var(--sbb-cream);
+  z-index: 2;
+  border: 4px solid var(--sbb-cream);
   border-radius: 999px;
   background: var(--sbb-red);
-  color: var(--sbb-white);
+  color: var(--sbb-cream);
   font-family: 'Lilita One', cursive;
-  font-size: 18px;
-  padding: 9px 16px;
+  font-size: 20px;
+  padding: 11px 22px;
+  text-transform: uppercase;
   box-shadow: 4px 5px 0 var(--sbb-black);
 }
 
 .sticker-one {
-  top: 54px;
-  right: -8px;
-  transform: rotate(8deg);
-}
-
-.sticker-two {
-  bottom: 74px;
-  left: -4px;
+  top: 188px;
+  left: -50px;
   transform: rotate(-9deg);
 }
 
+.sticker-two {
+  top: 58px;
+  right: -36px;
+  transform: rotate(7deg);
+}
+
 .sticker-three {
-  right: 18px;
-  bottom: 18px;
-  transform: rotate(4deg);
+  right: -20px;
+  bottom: 72px;
+  transform: rotate(-5deg);
 }
 
 .order-callout {
@@ -734,17 +737,18 @@ a {
   position: relative;
   overflow: hidden;
   background: var(--sbb-cream);
-  padding: 76px 0 90px;
+  padding: 55px 0 0;
 }
 
 .adventure-banner {
   position: relative;
-  width: calc(100% - 60px);
-  margin: 0 auto;
+  width: calc(100% - 56px);
+  min-height: 345px;
+  margin: 0 auto 70px;
   overflow: hidden;
-  border-radius: 20px 20px 0 0;
+  border-radius: 18px 18px 0 0;
   background: var(--sbb-red);
-  padding: 54px 30px 62px;
+  padding: 46px 34px 56px;
   text-align: center;
 }
 
@@ -753,29 +757,28 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 26px;
-  background: repeating-linear-gradient(135deg, transparent 0 20px, var(--sbb-cream) 20px 40px);
+  height: 18px;
+  background: linear-gradient(135deg, transparent 0 50%, var(--sbb-cream) 50% 100%) 0 0 / 28px 18px repeat-x;
   content: '';
 }
 
 .icon-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.08;
-  background:
-    radial-gradient(circle at 12% 20%, var(--sbb-cream) 0 14px, transparent 15px),
-    radial-gradient(circle at 82% 26%, var(--sbb-black) 0 16px, transparent 17px),
-    radial-gradient(circle at 30% 82%, var(--sbb-yellow) 0 18px, transparent 19px),
-    radial-gradient(circle at 72% 76%, var(--sbb-cream) 0 12px, transparent 13px);
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg width='220' height='190' viewBox='0 0 220 190' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23fff6df' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M24 48c8-18 44-18 52 0M19 58h62M26 72h48'/%3E%3Cpath d='M136 22h36l-7 54h-22zM142 10h30'/%3E%3Cpath d='M31 132l36-10 10 42-34 8zM40 118l6 28M54 115l5 28'/%3E%3Cpath d='M142 126l38-28 10 58zM154 125h20'/%3E%3Cpath d='M96 92c19-14 44-7 48 14-14 7-35 7-48-14z'/%3E%3Cpath d='M188 42c15 13 15 29 0 42-15-13-15-29 0-42z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 190px;
 }
 
 .adventure-banner h2 {
   position: relative;
-  margin: 0;
+  max-width: 610px;
+  margin: 0 auto;
   color: var(--sbb-cream);
   font-family: 'Bowlby One SC', cursive;
-  font-size: clamp(44px, 8vw, 72px);
-  line-height: 0.94;
+  font-size: clamp(48px, 7.5vw, 76px);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
 }
 
 .adventure-banner h2 span {
@@ -785,10 +788,11 @@ a {
 .adventure-banner p {
   position: relative;
   max-width: 420px;
-  margin: 22px auto 24px;
+  margin: 18px auto 0;
   color: var(--sbb-cream);
   font-family: Anton, sans-serif;
   font-size: 18px;
+  line-height: 1.2;
 }
 
 .discover-button {
@@ -797,23 +801,26 @@ a {
   display: inline-flex;
   height: 42px;
   align-items: center;
-  gap: 8px;
-  border-radius: 6px;
+  gap: 10px;
+  margin-top: 26px;
+  border-radius: 7px;
   background: var(--sbb-black);
   color: var(--sbb-cream);
   font-family: 'Lilita One', cursive;
-  padding: 0 18px;
+  font-size: 14px;
+  padding: 0 20px;
   transition: transform 180ms ease-out;
 }
 
 .collage-area {
   position: relative;
   height: 620px;
+  margin-top: -10px;
 }
 
 .warped-text {
   position: absolute;
-  top: 230px;
+  top: 170px;
   left: -130px;
   width: 980px;
   color: var(--sbb-red);
@@ -826,7 +833,7 @@ a {
 
 .teal-blob {
   position: absolute;
-  top: 132px;
+  top: 72px;
   left: 50%;
   width: 330px;
   height: 452px;
@@ -843,11 +850,12 @@ a {
   position: absolute;
   left: 50%;
   border: 5px solid var(--sbb-black);
+  filter: drop-shadow(0 0 0 var(--sbb-black));
   box-shadow: 7px 8px 0 var(--sbb-black);
 }
 
 .collage-main {
-  top: 98px;
+  top: 38px;
   width: 290px;
   height: 440px;
   transform: translateX(-50%) rotate(-2deg);
@@ -855,7 +863,7 @@ a {
 }
 
 .collage-top {
-  top: 66px;
+  top: 6px;
   width: 176px;
   height: 146px;
   transform: translateX(8%) rotate(10deg);
@@ -863,7 +871,7 @@ a {
 }
 
 .collage-bottom {
-  top: 402px;
+  top: 342px;
   width: 178px;
   height: 150px;
   transform: translateX(6%) rotate(-10deg);
@@ -871,7 +879,7 @@ a {
 }
 
 .collage-side {
-  top: 272px;
+  top: 212px;
   width: 150px;
   height: 150px;
   transform: translateX(-124%) rotate(9deg);
@@ -880,7 +888,7 @@ a {
 
 .collage-sticker {
   position: absolute;
-  top: 520px;
+  top: 460px;
   left: 50%;
   border: 4px solid var(--sbb-black);
   border-radius: 999px;
@@ -1151,5 +1159,48 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .flavor-circle-section {
+    padding-top: 76px;
+    padding-bottom: 58px;
+  }
+
+  .flavor-circle {
+    width: 320px;
+    height: 320px;
+  }
+
+  .typography-whirlpool {
+    transform: scale(0.744);
+    transform-origin: top left;
+  }
+
+  .circle-sticker {
+    font-size: 16px;
+    padding: 9px 17px;
+  }
+
+  .sticker-one {
+    top: 140px;
+    left: -14px;
+  }
+
+  .sticker-two {
+    top: 38px;
+    right: -14px;
+  }
+
+  .sticker-three {
+    right: -10px;
+    bottom: 50px;
+  }
+
+  .adventure-banner {
+    width: calc(100% - 32px);
+    padding-right: 18px;
+    padding-left: 18px;
   }
 }

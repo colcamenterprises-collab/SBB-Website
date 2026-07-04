@@ -1,44 +1,58 @@
-const rows = [
-  { text: 'SMASHBROS SMASHBROS', y: 20, rotate: -16, scale: 0.78 },
-  { text: 'SMASHBROS SMASHBROS', y: 62, rotate: -9, scale: 0.95 },
-  { text: 'SMASHBROS SMASHBROS', y: 106, rotate: -3, scale: 1.05 },
-  { text: 'SMASHBROS SMASHBROS', y: 151, rotate: 3, scale: 1.1 },
-  { text: 'SMASHBROS SMASHBROS', y: 196, rotate: 8, scale: 1.02 },
-  { text: 'SMASHBROS SMASHBROS', y: 240, rotate: 14, scale: 0.88 },
-  { text: 'SMASHBROS SMASHBROS', y: 282, rotate: 20, scale: 0.68 },
+const ringText = 'SMASHBROSSMASHBROSSMASHBROS'.repeat(5);
+
+const rings = [
+  { id: 'ring-outer', radius: 190, rotate: -8, size: 27 },
+  { id: 'ring-two', radius: 165, rotate: 12, size: 26 },
+  { id: 'ring-three', radius: 140, rotate: -18, size: 25 },
+  { id: 'ring-four', radius: 116, rotate: 9, size: 24 },
+  { id: 'ring-five', radius: 92, rotate: -11, size: 23 },
+  { id: 'ring-six', radius: 70, rotate: 16, size: 21 },
+  { id: 'ring-seven', radius: 50, rotate: -5, size: 18 },
 ];
 
 export default function FlavorCircle() {
   return (
     <section className="flavor-circle-section">
       <div className="flavor-circle" aria-label="Circular Smash Brothers flavor graphic">
-        {rows.map((row) => (
-          <div
-            key={`${row.y}-${row.rotate}`}
-            className="circle-row"
-            style={{
-              top: `${row.y}px`,
-              transform: `translateX(-50%) rotate(${row.rotate}deg) scaleX(${row.scale})`,
-            }}
-          >
-            {row.text}
-          </div>
-        ))}
-
-        <svg className="chef-doodle" viewBox="0 0 180 180" aria-hidden="true">
-          <path d="M54 64c-29-10-15-48 12-36 8-23 43-24 50 1 29-14 47 28 18 40" />
-          <path d="M48 70c8 62 78 72 92 0" />
-          <path d="M62 82c20 14 47 14 68 0" />
-          <path d="M74 104c8 8 24 8 34 0" />
-          <path d="M63 137c24 15 59 14 78-2" />
-          <circle cx="72" cy="93" r="5" />
-          <circle cx="118" cy="93" r="5" />
-          <path d="M88 118c10 5 22 4 31-2" />
+        <svg className="typography-whirlpool" viewBox="0 0 430 430" aria-hidden="true">
+          <defs>
+            {rings.map((ring) => (
+              <path
+                key={ring.id}
+                id={ring.id}
+                d={`M ${215 - ring.radius}, 215 a ${ring.radius},${ring.radius} 0 1,1 ${ring.radius * 2},0 a ${ring.radius},${ring.radius} 0 1,1 -${ring.radius * 2},0`}
+              />
+            ))}
+          </defs>
+          {rings.map((ring) => (
+            <text
+              key={ring.id}
+              className="circle-type-ring"
+              style={{ fontSize: `${ring.size}px` }}
+              transform={`rotate(${ring.rotate} 215 215)`}
+            >
+              <textPath href={`#${ring.id}`} startOffset="0%">
+                {ringText}
+              </textPath>
+            </text>
+          ))}
         </svg>
 
-        <span className="circle-sticker sticker-one">BURGERS</span>
-        <span className="circle-sticker sticker-two">FRIES</span>
-        <span className="circle-sticker sticker-three">CHICKEN</span>
+        <svg className="chef-doodle" viewBox="0 0 96 96" aria-hidden="true">
+          <path d="M25 45c4-13 18-20 32-17 13 3 23 13 23 27 0 18-14 30-32 30S17 73 17 55c0-4 1-7 2-10" />
+          <path d="M21 43c-8-5-4-18 6-15 2-10 18-12 22-3 9-9 25 2 17 13" />
+          <path d="M24 50c12-7 35-7 49 0" />
+          <path d="M31 66c8 7 25 8 35 0" />
+          <path d="M45 55c3 4 3 7 0 10" />
+          <path d="M33 56h.1" />
+          <path d="M62 56h.1" />
+          <path d="M12 35c6 0 10 2 13 7" />
+          <path d="M80 36c5 1 8 4 10 9" />
+        </svg>
+
+        <span className="circle-sticker sticker-one">SAUCE</span>
+        <span className="circle-sticker sticker-two">BURGERS</span>
+        <span className="circle-sticker sticker-three">CHEEZY</span>
       </div>
     </section>
   );
