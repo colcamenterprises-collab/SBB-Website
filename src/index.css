@@ -8,19 +8,16 @@
 @tailwind utilities;
 
 :root {
+  --sbb-yellow: #ffd400;
+  --sbb-yellow-deep: #f3bd00;
+  --sbb-black: #0d0d0d;
+  --sbb-black-soft: #171717;
+  --sbb-white: #fffdf2;
+  --sbb-cream: #fff5d6;
+  --sbb-ink: #0a0a0a;
+  --sbb-muted: #6f6752;
+  --sbb-border: #0d0d0d;
   --sbb-red: #e31219;
-  --sbb-red-dark: #b90710;
-  --sbb-red-deep: #8f050b;
-  --sbb-cream: #fff6df;
-  --sbb-cream-soft: #fdf0cf;
-  --sbb-black: #121212;
-  --sbb-black-soft: #1b1b1b;
-  --sbb-white: #fffdf4;
-  --sbb-ink: #101010;
-  --sbb-muted: #746d5d;
-  --sbb-border: #151515;
-  --sbb-yellow: #ffd64d;
-  --sbb-orange: #ff8a2a;
 }
 
 * {
@@ -57,7 +54,7 @@ a {
   position: relative;
   min-height: 760px;
   overflow: hidden;
-  background: var(--sbb-red);
+  background: var(--sbb-yellow);
   padding: 24px 22px 0;
 }
 
@@ -75,15 +72,15 @@ a {
 }
 
 .mini-logo {
-  color: var(--sbb-white);
+  color: var(--sbb-yellow);
   font-family: 'Bowlby One SC', cursive;
   font-size: 18px;
 }
 
 .menu-pill {
   border-radius: 6px;
-  background: var(--sbb-cream);
-  color: var(--sbb-red);
+  background: var(--sbb-yellow);
+  color: var(--sbb-black);
   font-family: 'Lilita One', cursive;
   font-size: 12px;
   padding: 6px 10px;
@@ -105,7 +102,7 @@ a {
 
 .hero-copy p {
   margin: 0;
-  color: var(--sbb-white);
+  color: var(--sbb-black);
   font-family: Anton, sans-serif;
   font-size: 28px;
   letter-spacing: 0;
@@ -113,7 +110,7 @@ a {
 
 .hero-copy h1 {
   margin: 0;
-  color: var(--sbb-cream);
+  color: var(--sbb-black);
   font-family: 'Bowlby One SC', cursive;
   font-size: clamp(72px, 13vw, 116px);
   line-height: 0.86;
@@ -124,7 +121,7 @@ a {
 .hero-copy span {
   display: block;
   margin-top: 18px;
-  color: var(--sbb-cream);
+  color: var(--sbb-black);
   font-family: Anton, sans-serif;
   font-size: 17px;
 }
@@ -144,33 +141,56 @@ a {
   overflow: visible;
 }
 
-.store-body,
-.store-sign {
+.store-body {
   fill: var(--sbb-white);
 }
 
 .store-roof,
 .store-shadow {
-  fill: var(--sbb-cream-soft);
-}
-
-.store-sign-text {
-  fill: var(--sbb-red);
-  font-family: 'Bowlby One SC', cursive;
-  font-size: 28px;
-}
-
-.awning-a {
-  fill: var(--sbb-red-dark);
-}
-
-.awning-b,
-.window {
   fill: var(--sbb-cream);
 }
 
-.door {
-  fill: var(--sbb-red);
+.corrugation,
+.interior-detail,
+.burger-face,
+.burger-arm {
+  fill: none;
+  stroke: var(--sbb-black);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.burger-bun {
+  fill: var(--sbb-cream);
+  stroke: var(--sbb-black);
+  stroke-width: 5;
+}
+
+.burger-cheese {
+  fill: var(--sbb-yellow);
+  stroke: var(--sbb-black);
+  stroke-width: 5;
+}
+
+.burger-patty {
+  fill: none;
+  stroke: var(--sbb-black);
+  stroke-linecap: round;
+  stroke-width: 9;
+}
+
+.awning-a {
+  fill: var(--sbb-yellow-deep);
+}
+
+.awning-b,
+.service-window {
+  fill: var(--sbb-cream);
+}
+
+.counter {
+  fill: var(--sbb-yellow);
 }
 
 .outline,
@@ -193,10 +213,10 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border: 2px solid var(--sbb-white);
+  border: 3px solid var(--sbb-black);
   border-radius: 6px;
-  background: var(--sbb-red);
-  color: var(--sbb-white);
+  background: var(--sbb-black);
+  color: var(--sbb-yellow);
   font-family: 'Lilita One', cursive;
   padding: 10px 14px;
   transition: transform 180ms ease-out;
@@ -250,7 +270,7 @@ a {
   overflow: hidden;
   border: 4px solid var(--sbb-border);
   border-radius: 22px;
-  background: var(--sbb-orange);
+  background: var(--sbb-yellow);
   box-shadow: 6px 8px 0 var(--sbb-black);
   transition: transform 180ms ease-out;
 }
@@ -273,7 +293,7 @@ a {
   overflow: hidden;
   background:
     repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.12) 0 8px, transparent 8px 16px),
-    var(--sbb-orange);
+    var(--sbb-yellow-deep);
 }
 
 .image-fallback img {
@@ -290,8 +310,8 @@ a {
   left: 10px;
   border: 3px solid var(--sbb-black);
   border-radius: 999px;
-  background: var(--sbb-cream);
-  color: var(--sbb-red);
+  background: var(--sbb-yellow);
+  color: var(--sbb-black);
   font-family: 'Lilita One', cursive;
   font-size: 15px;
   padding: 7px 8px;
@@ -307,12 +327,13 @@ a {
 
 .text-card.black {
   background: var(--sbb-black);
-  color: var(--sbb-red);
+  color: var(--sbb-yellow);
 }
 
-.text-card.red {
-  background: var(--sbb-red);
-  color: var(--sbb-cream);
+.text-card.red,
+.text-card.yellow {
+  background: var(--sbb-yellow);
+  color: var(--sbb-black);
 }
 
 .text-card h2 {
@@ -326,8 +347,8 @@ a {
   display: inline-block;
   margin-top: 18px;
   border-radius: 999px;
-  background: var(--sbb-cream);
-  color: var(--sbb-red);
+  background: var(--sbb-yellow);
+  color: var(--sbb-black);
   font-family: 'Lilita One', cursive;
   padding: 6px 12px;
 }
@@ -381,10 +402,10 @@ a {
 .circle-sticker {
   position: absolute;
   z-index: 2;
-  border: 4px solid var(--sbb-cream);
+  border: 4px solid var(--sbb-black);
   border-radius: 999px;
-  background: var(--sbb-red);
-  color: var(--sbb-cream);
+  background: var(--sbb-yellow);
+  color: var(--sbb-black);
   font-family: 'Lilita One', cursive;
   font-size: 20px;
   padding: 11px 22px;
@@ -443,7 +464,7 @@ a {
   height: 14px;
   border: 3px solid var(--sbb-cream);
   border-radius: 999px 999px 4px 4px;
-  background: var(--sbb-red);
+  background: var(--sbb-yellow);
 }
 
 .order-heading {
@@ -491,7 +512,7 @@ a {
   inset: 70px 60px 0 0;
   border: 5px solid var(--sbb-black);
   border-radius: 4px;
-  background: var(--sbb-red);
+  background: var(--sbb-yellow);
   overflow: hidden;
 }
 
@@ -504,7 +525,7 @@ a {
   transform: skewY(23deg);
   transform-origin: left top;
   border: 5px solid var(--sbb-black);
-  background: var(--sbb-red-dark);
+  background: var(--sbb-black-soft);
 }
 
 .building-top {
@@ -516,7 +537,7 @@ a {
   transform: skewX(-28deg);
   transform-origin: bottom left;
   border: 5px solid var(--sbb-black);
-  background: #f23438;
+  background: var(--sbb-yellow-deep);
 }
 
 .building-copy {
@@ -526,7 +547,7 @@ a {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  color: var(--sbb-cream);
+  color: var(--sbb-black);
   font-family: 'Bowlby One SC', cursive;
   font-size: clamp(62px, 11vw, 108px);
   line-height: 0.92;
@@ -543,21 +564,21 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 5px solid var(--sbb-red-dark);
+  border: 5px solid var(--sbb-black);
   background: var(--sbb-white);
   color: var(--sbb-black);
   transform: rotate(3deg);
 }
 
 .side-poster strong {
-  color: var(--sbb-red);
+  color: var(--sbb-black);
   font-family: 'Bowlby One SC', cursive;
   font-size: 54px;
   line-height: 0.95;
 }
 
 .side-poster em {
-  color: var(--sbb-red);
+  color: var(--sbb-black);
   font-family: 'Lilita One', cursive;
   font-size: 26px;
   font-style: normal;
@@ -592,7 +613,7 @@ a {
   top: 26px;
   right: 2px;
   width: 170px;
-  stroke: var(--sbb-red-deep);
+  stroke: var(--sbb-black);
   stroke-width: 14;
 }
 
@@ -614,8 +635,8 @@ a {
   gap: 8px;
   border: 5px dashed var(--sbb-black);
   border-radius: 16px;
-  background: var(--sbb-cream);
-  color: var(--sbb-red);
+  background: var(--sbb-yellow);
+  color: var(--sbb-black);
   font-family: 'Lilita One', cursive;
   font-size: 36px;
   padding: 16px 22px;
@@ -641,7 +662,7 @@ a {
 
 .order-footer-grid h3 {
   margin: 0 0 10px;
-  color: var(--sbb-red);
+  color: var(--sbb-yellow);
   font-family: 'Bowlby One SC', cursive;
   font-size: 17px;
 }
@@ -672,7 +693,7 @@ a {
   position: absolute;
   left: 50%;
   bottom: -42px;
-  color: var(--sbb-cream);
+  color: var(--sbb-yellow);
   font-family: 'Bowlby One SC', cursive;
   font-size: clamp(96px, 18vw, 190px);
   line-height: 1;
@@ -714,7 +735,7 @@ a {
   height: 42px;
   border: 5px solid var(--sbb-black);
   border-radius: 54% 44% 48% 52%;
-  background: var(--sbb-orange);
+  background: var(--sbb-yellow);
 }
 
 .sauce-doodle {
@@ -724,13 +745,13 @@ a {
   height: 46px;
   border: 5px solid var(--sbb-black);
   border-radius: 50%;
-  background: var(--sbb-red);
+  background: var(--sbb-yellow);
 }
 
 .wordmark-arrow {
   right: 30px;
   bottom: 58px;
-  color: var(--sbb-red);
+  color: var(--sbb-black);
 }
 
 .adventure-section {
@@ -747,7 +768,7 @@ a {
   margin: 0 auto 70px;
   overflow: hidden;
   border-radius: 18px 18px 0 0;
-  background: var(--sbb-red);
+  background: var(--sbb-yellow);
   padding: 46px 34px 56px;
   text-align: center;
 }
@@ -766,7 +787,7 @@ a {
   position: absolute;
   inset: 0;
   opacity: 0.1;
-  background-image: url("data:image/svg+xml,%3Csvg width='220' height='190' viewBox='0 0 220 190' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23fff6df' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M24 48c8-18 44-18 52 0M19 58h62M26 72h48'/%3E%3Cpath d='M136 22h36l-7 54h-22zM142 10h30'/%3E%3Cpath d='M31 132l36-10 10 42-34 8zM40 118l6 28M54 115l5 28'/%3E%3Cpath d='M142 126l38-28 10 58zM154 125h20'/%3E%3Cpath d='M96 92c19-14 44-7 48 14-14 7-35 7-48-14z'/%3E%3Cpath d='M188 42c15 13 15 29 0 42-15-13-15-29 0-42z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='220' height='190' viewBox='0 0 220 190' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230d0d0d' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M24 48c8-18 44-18 52 0M19 58h62M26 72h48'/%3E%3Cpath d='M136 22h36l-7 54h-22zM142 10h30'/%3E%3Cpath d='M31 132l36-10 10 42-34 8zM40 118l6 28M54 115l5 28'/%3E%3Cpath d='M142 126l38-28 10 58zM154 125h20'/%3E%3Cpath d='M96 92c19-14 44-7 48 14-14 7-35 7-48-14z'/%3E%3Cpath d='M188 42c15 13 15 29 0 42-15-13-15-29 0-42z'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 220px 190px;
 }
 
@@ -774,7 +795,7 @@ a {
   position: relative;
   max-width: 610px;
   margin: 0 auto;
-  color: var(--sbb-cream);
+  color: var(--sbb-black);
   font-family: 'Bowlby One SC', cursive;
   font-size: clamp(48px, 7.5vw, 76px);
   line-height: 0.92;
@@ -789,7 +810,7 @@ a {
   position: relative;
   max-width: 420px;
   margin: 18px auto 0;
-  color: var(--sbb-cream);
+  color: var(--sbb-black);
   font-family: Anton, sans-serif;
   font-size: 18px;
   line-height: 1.2;
@@ -823,7 +844,7 @@ a {
   top: 170px;
   left: -130px;
   width: 980px;
-  color: var(--sbb-red);
+  color: var(--sbb-black);
   font-family: 'Bowlby One SC', cursive;
   font-size: 64px;
   line-height: 1;
@@ -831,7 +852,7 @@ a {
   transform: rotate(-6deg) skewX(-8deg);
 }
 
-.teal-blob {
+.brand-blob {
   position: absolute;
   top: 72px;
   left: 50%;
@@ -840,7 +861,7 @@ a {
   transform: translateX(-50%) rotate(5deg);
   border: 5px solid var(--sbb-black);
   border-radius: 41% 59% 51% 49% / 37% 42% 58% 63%;
-  background: #30b6b3;
+  background: var(--sbb-yellow-deep);
 }
 
 .collage-main,
@@ -893,7 +914,7 @@ a {
   border: 4px solid var(--sbb-black);
   border-radius: 999px;
   background: var(--sbb-yellow);
-  color: var(--sbb-red);
+  color: var(--sbb-black);
   font-family: 'Lilita One', cursive;
   font-size: 24px;
   padding: 9px 18px;
@@ -938,8 +959,8 @@ a {
 .review-1 {
   top: 0;
   left: 0;
-  background: var(--sbb-red);
-  color: var(--sbb-cream);
+  background: var(--sbb-yellow);
+  color: var(--sbb-black);
   transform: rotate(-3deg);
 }
 
@@ -954,7 +975,7 @@ a {
 .review-3 {
   top: 286px;
   left: 26px;
-  background: var(--sbb-cream-soft);
+  background: var(--sbb-white);
   color: var(--sbb-black);
   transform: rotate(-1deg);
 }
@@ -1007,7 +1028,7 @@ a {
 }
 
 .ticker-track svg {
-  color: var(--sbb-red);
+  color: var(--sbb-yellow);
 }
 
 .final-footer {
@@ -1032,7 +1053,7 @@ a {
 
 .final-footer h2 {
   margin: 6px 0 10px;
-  color: var(--sbb-red);
+  color: var(--sbb-yellow);
   font-family: 'Bowlby One SC', cursive;
   font-size: clamp(76px, 16vw, 154px);
   line-height: 0.78;
