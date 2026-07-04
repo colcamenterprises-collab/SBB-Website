@@ -1,0 +1,1155 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sbb-red: #e31219;
+  --sbb-red-dark: #b90710;
+  --sbb-red-deep: #8f050b;
+  --sbb-cream: #fff6df;
+  --sbb-cream-soft: #fdf0cf;
+  --sbb-black: #121212;
+  --sbb-black-soft: #1b1b1b;
+  --sbb-white: #fffdf4;
+  --sbb-ink: #101010;
+  --sbb-muted: #746d5d;
+  --sbb-border: #151515;
+  --sbb-yellow: #ffd64d;
+  --sbb-orange: #ff8a2a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--sbb-black);
+  color: var(--sbb-ink);
+  font-family: Inter, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.poster-shell {
+  width: min(100%, 760px);
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background: var(--sbb-cream);
+  box-shadow: 0 0 0 1px rgba(255, 246, 223, 0.08);
+}
+
+.top-hero {
+  position: relative;
+  min-height: 760px;
+  overflow: hidden;
+  background: var(--sbb-red);
+  padding: 24px 22px 0;
+}
+
+.mini-nav {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  height: 42px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  border-radius: 8px;
+  background: var(--sbb-black);
+  padding: 0 14px;
+}
+
+.mini-logo {
+  color: var(--sbb-white);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 18px;
+}
+
+.menu-pill {
+  border-radius: 6px;
+  background: var(--sbb-cream);
+  color: var(--sbb-red);
+  font-family: 'Lilita One', cursive;
+  font-size: 12px;
+  padding: 6px 10px;
+  transition: transform 180ms ease-out;
+}
+
+.menu-pill:hover,
+.store-cta:hover,
+.discover-button:hover {
+  transform: translateY(-2px);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hero-copy p {
+  margin: 0;
+  color: var(--sbb-white);
+  font-family: Anton, sans-serif;
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  color: var(--sbb-cream);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: clamp(72px, 13vw, 116px);
+  line-height: 0.86;
+  letter-spacing: 0;
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.hero-copy span {
+  display: block;
+  margin-top: 18px;
+  color: var(--sbb-cream);
+  font-family: Anton, sans-serif;
+  font-size: 17px;
+}
+
+.storefront {
+  position: relative;
+  z-index: 3;
+  width: 78%;
+  max-width: 520px;
+  height: 210px;
+  margin: 98px auto 0;
+}
+
+.storefront svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.store-body,
+.store-sign {
+  fill: var(--sbb-white);
+}
+
+.store-roof,
+.store-shadow {
+  fill: var(--sbb-cream-soft);
+}
+
+.store-sign-text {
+  fill: var(--sbb-red);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 28px;
+}
+
+.awning-a {
+  fill: var(--sbb-red-dark);
+}
+
+.awning-b,
+.window {
+  fill: var(--sbb-cream);
+}
+
+.door {
+  fill: var(--sbb-red);
+}
+
+.outline,
+.doodle-line {
+  fill: none;
+  stroke: var(--sbb-black);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 5;
+}
+
+.doodle-line {
+  stroke-width: 4;
+}
+
+.store-cta {
+  position: absolute;
+  right: 16%;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 2px solid var(--sbb-white);
+  border-radius: 6px;
+  background: var(--sbb-red);
+  color: var(--sbb-white);
+  font-family: 'Lilita One', cursive;
+  padding: 10px 14px;
+  transition: transform 180ms ease-out;
+}
+
+.cream-drip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 92px;
+  background:
+    radial-gradient(circle at 32px 0, transparent 0 30px, var(--sbb-cream) 31px) 0 0 / 64px 64px repeat-x,
+    linear-gradient(var(--sbb-cream), var(--sbb-cream));
+  background-position: 0 0, 0 28px;
+  background-repeat: repeat-x, no-repeat;
+}
+
+.food-cards-section {
+  overflow: hidden;
+  background: var(--sbb-cream);
+  padding: 34px 0 70px;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  color: var(--sbb-black);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 34px;
+  line-height: 1;
+  white-space: nowrap;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee span {
+  padding-right: 24px;
+}
+
+.food-card-row {
+  display: flex;
+  gap: 14px;
+  overflow: hidden;
+  padding: 28px 20px;
+}
+
+.food-card {
+  position: relative;
+  flex: 0 0 175px;
+  height: 190px;
+  overflow: hidden;
+  border: 4px solid var(--sbb-border);
+  border-radius: 22px;
+  background: var(--sbb-orange);
+  box-shadow: 6px 8px 0 var(--sbb-black);
+  transition: transform 180ms ease-out;
+}
+
+.food-card:nth-child(2n) {
+  transform: rotate(-1.5deg);
+}
+
+.food-card:nth-child(3n) {
+  transform: rotate(1.5deg);
+}
+
+.food-card:hover {
+  transform: scale(1.025);
+}
+
+.image-fallback {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.12) 0 8px, transparent 8px 16px),
+    var(--sbb-orange);
+}
+
+.image-fallback img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.food-card strong {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  border: 3px solid var(--sbb-black);
+  border-radius: 999px;
+  background: var(--sbb-cream);
+  color: var(--sbb-red);
+  font-family: 'Lilita One', cursive;
+  font-size: 15px;
+  padding: 7px 8px;
+  text-align: center;
+}
+
+.text-card {
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  text-align: center;
+}
+
+.text-card.black {
+  background: var(--sbb-black);
+  color: var(--sbb-red);
+}
+
+.text-card.red {
+  background: var(--sbb-red);
+  color: var(--sbb-cream);
+}
+
+.text-card h2 {
+  margin: 0;
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 20px;
+  line-height: 1.05;
+}
+
+.text-card span {
+  display: inline-block;
+  margin-top: 18px;
+  border-radius: 999px;
+  background: var(--sbb-cream);
+  color: var(--sbb-red);
+  font-family: 'Lilita One', cursive;
+  padding: 6px 12px;
+}
+
+.flavor-circle-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--sbb-cream);
+  padding: 50px 20px 110px;
+}
+
+.flavor-circle {
+  position: relative;
+  width: min(360px, 92vw);
+  height: min(360px, 92vw);
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.circle-row {
+  position: absolute;
+  left: 50%;
+  width: 440px;
+  color: var(--sbb-black);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.chef-doodle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 176px;
+  height: 176px;
+  transform: translate(-50%, -50%);
+  fill: none;
+  stroke: var(--sbb-black);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 6;
+}
+
+.chef-doodle circle {
+  fill: var(--sbb-black);
+}
+
+.circle-sticker {
+  position: absolute;
+  border: 3px solid var(--sbb-cream);
+  border-radius: 999px;
+  background: var(--sbb-red);
+  color: var(--sbb-white);
+  font-family: 'Lilita One', cursive;
+  font-size: 18px;
+  padding: 9px 16px;
+  box-shadow: 4px 5px 0 var(--sbb-black);
+}
+
+.sticker-one {
+  top: 54px;
+  right: -8px;
+  transform: rotate(8deg);
+}
+
+.sticker-two {
+  bottom: 74px;
+  left: -4px;
+  transform: rotate(-9deg);
+}
+
+.sticker-three {
+  right: 18px;
+  bottom: 18px;
+  transform: rotate(4deg);
+}
+
+.order-callout {
+  position: relative;
+  overflow: hidden;
+  background: var(--sbb-cream);
+  padding-top: 58px;
+}
+
+.tilted-ticker {
+  display: flex;
+  width: calc(100% + 40px);
+  height: 54px;
+  align-items: center;
+  gap: 32px;
+  margin-left: -20px;
+  transform: rotate(-1.2deg);
+  background: var(--sbb-black);
+  color: var(--sbb-cream);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.tilted-ticker span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tilted-ticker i {
+  width: 20px;
+  height: 14px;
+  border: 3px solid var(--sbb-cream);
+  border-radius: 999px 999px 4px 4px;
+  background: var(--sbb-red);
+}
+
+.order-heading {
+  position: relative;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.order-heading svg {
+  position: absolute;
+  top: -34px;
+  left: 26px;
+  width: 120px;
+  fill: none;
+  stroke: var(--sbb-black);
+  stroke-linecap: round;
+  stroke-width: 6;
+}
+
+.order-heading p {
+  margin: 0;
+  color: var(--sbb-black);
+  font-family: Anton, sans-serif;
+  font-size: 22px;
+}
+
+.order-heading h2 {
+  max-width: 620px;
+  margin: 8px auto 0;
+  color: var(--sbb-black);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 42px;
+  line-height: 0.98;
+}
+
+.red-building {
+  position: relative;
+  width: 92%;
+  height: 760px;
+  margin: 60px auto 0;
+}
+
+.building-front {
+  position: absolute;
+  inset: 70px 60px 0 0;
+  border: 5px solid var(--sbb-black);
+  border-radius: 4px;
+  background: var(--sbb-red);
+  overflow: hidden;
+}
+
+.building-side {
+  position: absolute;
+  top: 92px;
+  right: 0;
+  width: 64px;
+  height: 668px;
+  transform: skewY(23deg);
+  transform-origin: left top;
+  border: 5px solid var(--sbb-black);
+  background: var(--sbb-red-dark);
+}
+
+.building-top {
+  position: absolute;
+  top: 0;
+  right: 34px;
+  left: 28px;
+  height: 78px;
+  transform: skewX(-28deg);
+  transform-origin: bottom left;
+  border: 5px solid var(--sbb-black);
+  background: #f23438;
+}
+
+.building-copy {
+  position: absolute;
+  top: 140px;
+  left: 34px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  color: var(--sbb-cream);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: clamp(62px, 11vw, 108px);
+  line-height: 0.92;
+}
+
+.side-poster {
+  position: absolute;
+  top: 112px;
+  right: 24px;
+  z-index: 3;
+  display: flex;
+  width: 170px;
+  height: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid var(--sbb-red-dark);
+  background: var(--sbb-white);
+  color: var(--sbb-black);
+  transform: rotate(3deg);
+}
+
+.side-poster strong {
+  color: var(--sbb-red);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 54px;
+  line-height: 0.95;
+}
+
+.side-poster em {
+  color: var(--sbb-red);
+  font-family: 'Lilita One', cursive;
+  font-size: 26px;
+  font-style: normal;
+}
+
+.side-poster span,
+.side-poster b {
+  font-family: Anton, sans-serif;
+  font-size: 30px;
+}
+
+.side-poster small {
+  width: 112px;
+  margin-top: 7px;
+  border-radius: 4px;
+  background: var(--sbb-black);
+  color: var(--sbb-white);
+  font: 800 10px Inter, sans-serif;
+  padding: 5px;
+  text-align: center;
+}
+
+.order-arrow {
+  position: absolute;
+  z-index: 4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arrow-red {
+  top: 26px;
+  right: 2px;
+  width: 170px;
+  stroke: var(--sbb-red-deep);
+  stroke-width: 14;
+}
+
+.arrow-white {
+  top: 390px;
+  right: 80px;
+  width: 150px;
+  stroke: var(--sbb-white);
+  stroke-width: 10;
+}
+
+.call-sign {
+  position: absolute;
+  bottom: 96px;
+  left: 30px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 5px dashed var(--sbb-black);
+  border-radius: 16px;
+  background: var(--sbb-cream);
+  color: var(--sbb-red);
+  font-family: 'Lilita One', cursive;
+  font-size: 36px;
+  padding: 16px 22px;
+  transform: rotate(-3deg);
+}
+
+.black-scallop {
+  position: relative;
+  min-height: 280px;
+  margin-top: -1px;
+  background:
+    radial-gradient(circle at 28px 0, var(--sbb-cream) 0 26px, transparent 27px) 0 0 / 56px 38px repeat-x,
+    linear-gradient(var(--sbb-black), var(--sbb-black)) 0 28px / 100% calc(100% - 28px) no-repeat;
+  color: var(--sbb-white);
+  padding: 78px 26px 0;
+}
+
+.order-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.order-footer-grid h3 {
+  margin: 0 0 10px;
+  color: var(--sbb-red);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 17px;
+}
+
+.order-footer-grid a {
+  display: block;
+  margin: 7px 0;
+  color: var(--sbb-cream);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.order-footer-grid .social {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.huge-wordmark {
+  position: relative;
+  height: 150px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.huge-wordmark span {
+  position: absolute;
+  left: 50%;
+  bottom: -42px;
+  color: var(--sbb-cream);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: clamp(96px, 18vw, 190px);
+  line-height: 1;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.doodle,
+.wordmark-arrow {
+  position: absolute;
+  z-index: 2;
+}
+
+.burger-doodle {
+  bottom: 44px;
+  left: 12%;
+  width: 58px;
+  height: 34px;
+  border: 5px solid var(--sbb-black);
+  border-radius: 999px 999px 12px 12px;
+  background: var(--sbb-yellow);
+  box-shadow: 0 12px 0 var(--sbb-red), 0 19px 0 var(--sbb-cream);
+}
+
+.fries-doodle {
+  right: 21%;
+  bottom: 58px;
+  width: 48px;
+  height: 56px;
+  border: 5px solid var(--sbb-black);
+  background: linear-gradient(90deg, var(--sbb-yellow) 0 18%, transparent 18% 28%, var(--sbb-yellow) 28% 47%, transparent 47% 57%, var(--sbb-yellow) 57% 78%, transparent 78%), var(--sbb-red);
+  transform: rotate(8deg);
+}
+
+.chicken-doodle {
+  right: 8%;
+  bottom: 28px;
+  width: 62px;
+  height: 42px;
+  border: 5px solid var(--sbb-black);
+  border-radius: 54% 44% 48% 52%;
+  background: var(--sbb-orange);
+}
+
+.sauce-doodle {
+  bottom: 18px;
+  left: 37%;
+  width: 46px;
+  height: 46px;
+  border: 5px solid var(--sbb-black);
+  border-radius: 50%;
+  background: var(--sbb-red);
+}
+
+.wordmark-arrow {
+  right: 30px;
+  bottom: 58px;
+  color: var(--sbb-red);
+}
+
+.adventure-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--sbb-cream);
+  padding: 76px 0 90px;
+}
+
+.adventure-banner {
+  position: relative;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: var(--sbb-red);
+  padding: 54px 30px 62px;
+  text-align: center;
+}
+
+.adventure-banner::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 26px;
+  background: repeating-linear-gradient(135deg, transparent 0 20px, var(--sbb-cream) 20px 40px);
+  content: '';
+}
+
+.icon-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background:
+    radial-gradient(circle at 12% 20%, var(--sbb-cream) 0 14px, transparent 15px),
+    radial-gradient(circle at 82% 26%, var(--sbb-black) 0 16px, transparent 17px),
+    radial-gradient(circle at 30% 82%, var(--sbb-yellow) 0 18px, transparent 19px),
+    radial-gradient(circle at 72% 76%, var(--sbb-cream) 0 12px, transparent 13px);
+}
+
+.adventure-banner h2 {
+  position: relative;
+  margin: 0;
+  color: var(--sbb-cream);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: clamp(44px, 8vw, 72px);
+  line-height: 0.94;
+}
+
+.adventure-banner h2 span {
+  display: block;
+}
+
+.adventure-banner p {
+  position: relative;
+  max-width: 420px;
+  margin: 22px auto 24px;
+  color: var(--sbb-cream);
+  font-family: Anton, sans-serif;
+  font-size: 18px;
+}
+
+.discover-button {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  height: 42px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  background: var(--sbb-black);
+  color: var(--sbb-cream);
+  font-family: 'Lilita One', cursive;
+  padding: 0 18px;
+  transition: transform 180ms ease-out;
+}
+
+.collage-area {
+  position: relative;
+  height: 620px;
+}
+
+.warped-text {
+  position: absolute;
+  top: 230px;
+  left: -130px;
+  width: 980px;
+  color: var(--sbb-red);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 64px;
+  line-height: 1;
+  opacity: 0.96;
+  transform: rotate(-6deg) skewX(-8deg);
+}
+
+.teal-blob {
+  position: absolute;
+  top: 132px;
+  left: 50%;
+  width: 330px;
+  height: 452px;
+  transform: translateX(-50%) rotate(5deg);
+  border: 5px solid var(--sbb-black);
+  border-radius: 41% 59% 51% 49% / 37% 42% 58% 63%;
+  background: #30b6b3;
+}
+
+.collage-main,
+.collage-top,
+.collage-bottom,
+.collage-side {
+  position: absolute;
+  left: 50%;
+  border: 5px solid var(--sbb-black);
+  box-shadow: 7px 8px 0 var(--sbb-black);
+}
+
+.collage-main {
+  top: 98px;
+  width: 290px;
+  height: 440px;
+  transform: translateX(-50%) rotate(-2deg);
+  clip-path: polygon(14% 0, 92% 10%, 100% 82%, 46% 100%, 0 82%, 4% 16%);
+}
+
+.collage-top {
+  top: 66px;
+  width: 176px;
+  height: 146px;
+  transform: translateX(8%) rotate(10deg);
+  border-radius: 36px;
+}
+
+.collage-bottom {
+  top: 402px;
+  width: 178px;
+  height: 150px;
+  transform: translateX(6%) rotate(-10deg);
+  border-radius: 38px;
+}
+
+.collage-side {
+  top: 272px;
+  width: 150px;
+  height: 150px;
+  transform: translateX(-124%) rotate(9deg);
+  border-radius: 50%;
+}
+
+.collage-sticker {
+  position: absolute;
+  top: 520px;
+  left: 50%;
+  border: 4px solid var(--sbb-black);
+  border-radius: 999px;
+  background: var(--sbb-yellow);
+  color: var(--sbb-red);
+  font-family: 'Lilita One', cursive;
+  font-size: 24px;
+  padding: 9px 18px;
+  transform: translateX(-50%) rotate(-4deg);
+}
+
+.testimonials {
+  background: var(--sbb-cream);
+  padding: 80px 20px 110px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin: 0 auto 54px;
+  color: var(--sbb-black);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: clamp(38px, 7vw, 62px);
+  line-height: 0.95;
+}
+
+.testimonials h2 span {
+  display: block;
+}
+
+.testimonial-stack {
+  position: relative;
+  width: min(420px, 100%);
+  min-height: 470px;
+  margin: 0 auto;
+}
+
+.review-card {
+  position: absolute;
+  width: min(360px, 88vw);
+  border: 5px solid var(--sbb-black);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: 8px 9px 0 var(--sbb-black);
+}
+
+.review-1 {
+  top: 0;
+  left: 0;
+  background: var(--sbb-red);
+  color: var(--sbb-cream);
+  transform: rotate(-3deg);
+}
+
+.review-2 {
+  top: 136px;
+  right: 0;
+  background: var(--sbb-black);
+  color: var(--sbb-cream);
+  transform: rotate(3deg);
+}
+
+.review-3 {
+  top: 286px;
+  left: 26px;
+  background: var(--sbb-cream-soft);
+  color: var(--sbb-black);
+  transform: rotate(-1deg);
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+  color: var(--sbb-yellow);
+}
+
+.review-card p {
+  margin: 14px 0 18px;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.review-card strong {
+  display: block;
+  font-family: 'Lilita One', cursive;
+  font-size: 22px;
+}
+
+.review-card span {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.bottom-ticker {
+  overflow: hidden;
+  background: var(--sbb-black);
+  color: var(--sbb-cream);
+  padding: 18px 0;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 30px;
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 22px;
+  animation: marquee 16s linear infinite;
+}
+
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.ticker-track svg {
+  color: var(--sbb-red);
+}
+
+.final-footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--sbb-black);
+  color: var(--sbb-cream);
+  padding: 42px 24px 34px;
+}
+
+.footer-topline,
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.final-footer h2 {
+  margin: 6px 0 10px;
+  color: var(--sbb-red);
+  font-family: 'Bowlby One SC', cursive;
+  font-size: clamp(76px, 16vw, 154px);
+  line-height: 0.78;
+  transform: translateX(-7%);
+  white-space: nowrap;
+}
+
+.footer-bottom p {
+  display: flex;
+  max-width: 320px;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .poster-shell {
+    width: 100%;
+  }
+
+  .top-hero {
+    min-height: 720px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .storefront {
+    width: 94%;
+    margin-top: 86px;
+  }
+
+  .food-card {
+    flex-basis: 158px;
+  }
+
+  .order-heading h2 {
+    font-size: 34px;
+  }
+
+  .red-building {
+    width: 96%;
+    height: 690px;
+  }
+
+  .building-front {
+    inset: 58px 42px 0 0;
+  }
+
+  .building-side {
+    width: 48px;
+    height: 608px;
+  }
+
+  .building-copy {
+    left: 22px;
+    font-size: 58px;
+  }
+
+  .side-poster {
+    top: 316px;
+    right: 16px;
+    width: 140px;
+    height: 210px;
+  }
+
+  .call-sign {
+    bottom: 74px;
+    left: 18px;
+    font-size: 28px;
+  }
+
+  .order-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .black-scallop {
+    padding-top: 70px;
+  }
+
+  .adventure-banner {
+    width: calc(100% - 28px);
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .warped-text {
+    left: -230px;
+    font-size: 52px;
+  }
+
+  .testimonial-stack {
+    min-height: 540px;
+  }
+
+  .review-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    margin: 0 auto 22px;
+  }
+
+  .footer-topline,
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
